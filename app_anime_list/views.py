@@ -13,7 +13,7 @@ def index(request):
     context = {
         "num_anime": num_anime,
         "num_anime_types": num_anime_types,
-        "num_visits ": num_visits + 1
+        "num_visits": num_visits + 1
     }
 
     return render(request, "app_anime_list/index.html", context=context)
