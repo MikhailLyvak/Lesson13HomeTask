@@ -33,11 +33,7 @@
         {% endif %}
       </td>
       <td>
-        {{ anime.episodes }}/  {% if not anime.my_episodes %}
-        1
-      {% else %}
-        {{ anime.my_episodes }}
-      {% endif %}
+        {{ anime.episodes }}/ {{ anime.my_episode }}
        
       </td>
       <td>
