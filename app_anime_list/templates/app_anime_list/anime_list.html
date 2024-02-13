@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Episodes</th>
+        <th>My rating</th>
+        <th>Anime Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {% for anime in anime_list %}
+      <tr>
+      <td>
+        {{ anime.name }}
+      </td>
+      <td>
+        {% if not anime.discription %}
+          -==-
+        {% else %}
+          {{ anime.discription }}
+        {% endif %}
+      </td>
+      <td>
+        {{ anime.episodes }}/  {% if not anime.my_episodes %}
+        1
+      {% else %}
+        {{ anime.my_episodes }}
+      {% endif %}
+       
+      </td>
+      <td>
+        {{ anime.my_rating }}
+      </td>
+      <td>
+        {{ anime.type }}
+      </td>
+    </tr>
+      {% endfor %}
+    </tbody>
+</table>
+<a type="button" href="{% url 'app_anime_list:index' %}">Home</a>
+
+</body>
+</html>
